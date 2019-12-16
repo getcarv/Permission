@@ -23,6 +23,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 public enum PermissionType {
     #if PERMISSION_CONTACTS
