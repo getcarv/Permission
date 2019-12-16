@@ -6,6 +6,9 @@ let package = Package(
     products: [
         .library(name: "Permission", targets: ["Permission"])
     ],
+    platforms: [
+        .iOS(.v10),
+    ],
     targets: [
         .target(
             name: "Permission",
