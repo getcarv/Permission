@@ -22,6 +22,8 @@
 // SOFTWARE.
 //
 
+import Foundation
+
 public enum PermissionType {
     #if PERMISSION_CONTACTS
     case contacts
