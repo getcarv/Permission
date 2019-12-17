@@ -83,8 +83,17 @@ struct Defaults {
     @UserDefault("permission.requestedBluetooth", defaultValue: false)
     static var requestedBluetooth: Bool
 
-    @UserDefault("permission.statusBluetooth", defaultValue: nil)
-    static var statusBluetooth: PermissionStatus?
+    @UserDefault("permission.statusBluetooth", defaultValue: "Not Determined")
+    static var statusBluetoothString: String
+  
+    static var statusBluetooth: PermissionStatus {
+        get {
+          PermissionStatus(rawValue: statusBluetoothString) ?? .notDetermined
+        }
+        set {
+            statusBluetoothString = newValue.rawValue
+        }
+    }
 
     @UserDefault("permission.stateBluetoothManagerDetermined", defaultValue: false)
     static var stateBluetoothManagerDetermined: Bool
