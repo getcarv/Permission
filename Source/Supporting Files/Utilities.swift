@@ -80,9 +80,6 @@ struct Defaults {
     @UserDefault("permission.requestedMotion", defaultValue: false)
     static var requestedMotion: Bool
 
-    @UserDefault("permission.requestedBluetooth", defaultValue: false)
-    static var requestedBluetooth: Bool
-
     @UserDefault("permission.statusBluetooth", defaultValue: "Not Determined")
     static var statusBluetoothString: String
   
