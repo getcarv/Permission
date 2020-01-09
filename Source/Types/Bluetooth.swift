@@ -75,7 +75,7 @@ extension Permission: CBPeripheralManagerDelegate {
 
         guard Defaults.requestedBluetooth else { return }
 
-        callback?(statusBluetooth)
+        callbacks(statusBluetooth)
 
         Defaults.requestedBluetooth = false
     }
