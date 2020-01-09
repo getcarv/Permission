@@ -200,6 +200,7 @@ open class Permission: NSObject {
     }()
 
     var callback: Callback?
+    public var onChange: Callback?
 
     var permissionSets: [PermissionSet] = []
 
@@ -272,11 +273,11 @@ open class Permission: NSObject {
         #endif
 
         #if PERMISSION_BLUETOOTH
-        case .bluetooth: requestBluetooth(self.callback)
+        case .bluetooth: requestBluetooth(callback)
         #endif
 
         #if PERMISSION_MOTION
-        case .motion: requestMotion(self.callback)
+        case .motion: requestMotion(callback)
         #endif
 
         #if PERMISSION_SPEECH_RECOGNIZER
@@ -298,6 +299,7 @@ open class Permission: NSObject {
     func callbacks(_ with: PermissionStatus) {
         DispatchQueue.main.async {
             self.callback?(self.status)
+            self.onChange?(self.status)
             self.permissionSets.forEach { $0.didRequestPermission(self) }
         }
     }
