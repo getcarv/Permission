@@ -52,7 +52,7 @@ extension Permission {
 
             MotionManager.stopActivityUpdates()
 
-            callbacks(status)
+            self.callbacks(status)
         }
     }
 
