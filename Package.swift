@@ -21,7 +21,7 @@ let package = Package(
             //   .define("PERMISSION_EVENTS"),
               .define("PERMISSION_LOCATION"),
             //   .define("PERMISSION_MICROPHONE"),
-            //   .define("PERMISSION_MOTION"),
+              .define("PERMISSION_MOTION"),
               .define("PERMISSION_NOTIFICATIONS"),
               .define("PERMISSION_PHOTOS"),
             //   .define("PERMISSION_REMINDERS"),
